@@ -48,17 +48,28 @@ def write_data(data_dict):
 
 def merge_file(tempFile, finalFile):
     # reading csv files
-    final = pd.read_csv(finalFile)
-    final = final[(final["username"] != "[deleted]")]
-    temp = pd.read_csv(tempFile)
-    temp = temp[(temp["username"] != "[deleted]")]
+    if os.path.isfile(finalFile):
+        final = pd.read_csv(finalFile)
+        final = final[(final["username"] != "[deleted]")]
+        temp = pd.read_csv(tempFile)
+        temp = temp[(temp["username"] != "[deleted]")]
+
+        # using merge function by setting how='left'
+        output2 = pd.merge(final, temp, 
+                        on='username', 
+                        how='left')
+        
+        output2.to_csv(finalFile, header=True, index=False)
+    else:
+        final = pd.read_csv(tempFile)
+        final = final[(final["username"] != "[deleted]")]
+
+        final.to_csv(finalFile, header=True, index=False)
+
+
     
-    # using merge function by setting how='left'
-    output2 = pd.merge(final, temp, 
-                    on='username', 
-                    how='left')
     
-    output2.to_csv(finalFile, header=True, index=False)
+    
 
 def process_data(leaderboard_dict):
     pass
