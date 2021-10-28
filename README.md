@@ -7,25 +7,30 @@ This code will help perform the below tasks:
 ## Pre-Requisites
 -   Python3
 -   PIP Install the requirements.txt file by running the below command:
-    pip install -r requirements.txt
+
+        pip install -r requirements.txt
 -   Any IDE
 
 ## Steps to Run
 -   Git Checkout this repository
--   python -u src/final.py
+-   Run the below command:
+
+        python -u src/final.py
+
     This command will prompt as below:
-    Welcome to Wissen Coding Challenge Console
+    
+        Welcome to Wissen Coding Challenge Console
 
-    1. SEND TOP25 DAILY LEADERBOARD
+            1. SEND TOP25 DAILY LEADERBOARD
 
-    2. SEND NEWS UPDATE
+            2. SEND NEWS UPDATE
 
-    3. EXPORT LEADERBOARD
+            3. EXPORT LEADERBOARD
 
-    0. EXIT
+            0. EXIT
 
-    Enter your command:
+        Enter your command:
 
-    1) It will send Top25 Daiily Leaderboard to the Slack Channel
-    2) It will send news update to the Slack Channel
-    3) It will export the leaderboard and merge it with the last generated leaderboard file. Make sure you keep the last generated file from the GDrive to your local.
+1. It will send Top25 Daiily Leaderboard to the Slack Channel
+2. It will send news update to the Slack Channel
+3. It will export the leaderboard and merge it with the last generated leaderboard file. Make sure you keep the last generated file from the GDrive to your local.
