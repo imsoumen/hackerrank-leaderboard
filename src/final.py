@@ -81,8 +81,8 @@ def sendSlackMessage(message):
     #message += '2' + '\t\t\t' + 'Soumen' + '\t\t\t\t' + '100' + '\n'
     title = f"New Incoming Message :zap:"
     slack_data = {
-        "username": config.slackInfo["username"],
-        "icon_emoji": ":robot_face:",
+        #"username": config.slackInfo["username"],
+        #"icon_emoji": ":robot_face:",
         "attachments": [
 		{
 			"blocks": [
