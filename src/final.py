@@ -161,7 +161,49 @@ if __name__ == "__main__":
         print("Message Sent")
     elif inp == "2":
         message = """Hey Coders,
-        \nNew Problems have just been added to the challenge. Happy Coding :technologist:\n"""
+
+        New Problems have just been added to the challenge. Happy Coding :technologist:\n"""
+
+#         message = """Hey Coders,
+
+#     Welcome to Wissen Coding Challenge Season 3
+
+#     Rules:
+#     Enrollment Rules:
+
+#         - Each employee is eligible to have one ID enrolled under this challenge. Multiple IDs for an employee not allowed.
+#         - You should signup to the contest using your Wissen email id only. Personal email ids account enrollment will not be considered. You can create a new hackerrank id with Wissen Email ID only.
+#         - Participants can signup to this contest from the link given above. Once signed up, the details will be recorded. You can read the Rules and Conditions mentioned there.
+#         - Participants must have to join our Whatsapp group. All the updates will be provided in this group. Link below:
+
+#         [Whatsapp Link](https://chat.whatsapp.com/JG0RRY1P3RPJCrbH71VNx9)
+
+#         - Participants must have to join this Slack Channel "**code-challenge**" for all the updates. Link Below:
+
+#         [Slack Channel](https://wissen-technology-hq.slack.com/archives/C01BH46BPMF)
+
+#     Rules:
+
+#         - Every week few problems will be released by the moderator. The participants has to solve those problems.
+#         - Each submissions from the participants will be monitored and analysed every week. We will be comparing the participant's submitted code with all existing submitted code for the problems using a Comparator Bot. We will be analysing the submissions based on the bot's report. Hence, plagiarism will lead to disqualification. 
+#         - The leaderboard will be broadcasted every week to the whole organisation.
+#         - During the end of the  Season, all the submissions will be deeply analysed and the checks were performed on the solutions. Hence, who ends up being top will be declared as Winner and runner up.
+#         - In case of tie, a tie breaker round will be announced once the contest ends. Details about the round will be announced at that time.
+#         - A participant can put as many solutions as they want. High score scored by any submission will be considered.
+#         - There will be an auto-elimination if any participant fails to score at least 200 score points in 3 weeks. Before &amp; After auto-elimination, the user will be notified. This will be effective after 6  months of contest start date.
+#         - Wissen holds all rights to adjudicate on any dispute and verify your eligibility at any stage of the contest.
+#         - By entering the contest, you agree to produce any proof of eligibility requested by us for verification purposes. If you fail to do so, it will result in your immediate disqualification from the contest and forfeiture of the prizes.
+
+    
+#     Note: These informations are available in the Hackerrank Contest Link as well. We recommend you to go through these before proceeding. We will be strictly following rules by avoiding plagiarism and make this contest fair for everyone.
+
+
+
+# :technologist:The problems are going to be added shortly.:technologist:
+
+# Hope you enjoy learning & experiencing this rollercoaster ride. Happy Coding. Best of Luck to all the participants.
+
+#         """
         sendSlackMessage(message)
         print("Message Sent")
     elif inp == "3":
