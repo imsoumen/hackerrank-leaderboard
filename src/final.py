@@ -57,9 +57,10 @@ def merge_file(tempFile, finalFile):
         # using merge function by setting how='left'
         output2 = pd.merge(final, temp, 
                         on='username', 
-                        how='left')
-        
-        output2.to_csv(finalFile, header=True, index=False)
+                        how='outer')
+
+        #output2 = final.set_index('username').combine_first(temp.set_index('username')).reset_index()
+        output2.sort_values(by=['username']).to_csv(finalFile, header=True, index=False)
     else:
         final = pd.read_csv(tempFile)
         final = final[(final["username"] != "[deleted]")]
