@@ -76,8 +76,8 @@ def process_data(leaderboard_dict):
     pass
 
 
-def sendSlackMessage(message):
-    url = config.slackInfo["url"]
+def sendSlackMessage(message,slackConfig="slackInfoCC"):
+    url = config.slackConfig["url"]
     #message = '1' + '\t\t\t' + 'SS' + '\t\t\t\t' + '150' + '\n'
     #message += '2' + '\t\t\t' + 'Soumen' + '\t\t\t\t' + '100' + '\n'
     title = f"New Incoming Message :zap:"
@@ -138,15 +138,14 @@ def sendSlackMessage(message):
         raise Exception(response.status_code, response.text)
 
 
-def createMessage(leaderboard_dict):
-    message = "*Rank*\t\t\t*Name*\t\t\t\t*Score*\n"
+def createMessage(leaderboard_dict,message):
     for lb_entry in leaderboard_dict['models']:
         message += str(lb_entry['rank']) + "\t\t\t" + lb_entry['hacker'] + "\t\t\t\t" + str(lb_entry['score']) + "\n"
     return message
 
 if __name__ == "__main__":
     inp = input("""\nWelcome to Wissen Coding Challenge Console \n
-    1. SEND TOP25 DAILY LEADERBOARD\n
+    1. SEND DAILY LEADERBOARD\n
     2. SEND NEWS UPDATE\n
     3. EXPORT LEADERBOARD\n
     0. EXIT\n
@@ -155,10 +154,29 @@ if __name__ == "__main__":
     # leaderboard_dict = get_leaderboard_data()
     # process_data(leaderboard_dict)
     if inp == "1":
-        leaderboard_top25 = get_leaderboard_data(0,25)
-        message = createMessage(leaderboard_top25)
+
+        header = "*Rank*\t\t\t*Name*\t\t\t\t*Score*\n"
+        message = header
+
+        offset=0
+        limit=100
+
+        while offset < 300:
+            print("Offset:"+str(offset))
+            leaderboard100 = get_leaderboard_data(offset,limit)
+            message = createMessage(leaderboard100,message)
+            offset=offset+100
+        
+        #leaderboard_top25 = get_leaderboard_data(0,25)
+        #message = createMessage(leaderboard_top25,message)
         print(message)
-        sendSlackMessage(message)
+        
+        msginp = input("\nWhich slack channel you want to send?\n1. code-challenge\n2. general\n\n")
+        if msginp == "1":
+            slackConfig = "slackInfoCC"
+        elif msginp == "2":
+            slackConfig = "slackInfoGen"
+        sendSlackMessage(message,slackConfig)
         print("Message Sent")
     elif inp == "2":
         message = """Hey Coders,
