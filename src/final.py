@@ -76,8 +76,8 @@ def process_data(leaderboard_dict):
     pass
 
 
-def sendSlackMessage(message,slackConfig="slackInfoCC"):
-    url = config.slackConfig["url"]
+def sendSlackMessage(message,slackConfig):
+    url = slackConfig["url"]
     #message = '1' + '\t\t\t' + 'SS' + '\t\t\t\t' + '150' + '\n'
     #message += '2' + '\t\t\t' + 'Soumen' + '\t\t\t\t' + '100' + '\n'
     title = f"New Incoming Message :zap:"
@@ -173,10 +173,10 @@ if __name__ == "__main__":
         
         msginp = input("\nWhich slack channel you want to send?\n1. code-challenge\n2. general\n\n")
         if msginp == "1":
-            slackConfig = "slackInfoCC"
+            sendSlackMessage(message,config.slackInfoCC)
         elif msginp == "2":
-            slackConfig = "slackInfoGen"
-        sendSlackMessage(message,slackConfig)
+            sendSlackMessage(message,config.slackInfoGen)
+        
         print("Message Sent")
     elif inp == "2":
         message = """Hey Coders,
