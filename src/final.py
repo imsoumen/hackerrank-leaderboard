@@ -76,7 +76,7 @@ def process_data(leaderboard_dict):
     pass
 
 
-def sendSlackMessage(message,slackConfig):
+def sendSlackMessage(message,slackConfig,headerText):
     url = slackConfig["url"]
     #message = '1' + '\t\t\t' + 'SS' + '\t\t\t\t' + '150' + '\n'
     #message += '2' + '\t\t\t' + 'Soumen' + '\t\t\t\t' + '100' + '\n'
@@ -91,7 +91,7 @@ def sendSlackMessage(message,slackConfig):
 					"type": "header",
 					"text": {
 						"type": "plain_text",
-						"text": ":point_right: Wissen Coding Challenge Season 3 Leaderboard :clap: :point_left:"
+						"text": ":point_right: " + headerText + ":clap: :point_left:"
 					}
 				},
 				{
@@ -172,10 +172,11 @@ if __name__ == "__main__":
         print(message)
         
         msginp = input("\nWhich slack channel you want to send?\n1. code-challenge\n2. general\n\n")
-        if msginp == "1":
-            sendSlackMessage(message,config.slackInfoCC)
+        headerText = "Wissen Coding Challenge Season 3 Leaderboard"
+        if msginp == "1":          
+            sendSlackMessage(message,config.slackInfoCC,headerText)
         elif msginp == "2":
-            sendSlackMessage(message,config.slackInfoGen)
+            sendSlackMessage(message,config.slackInfoGen,headerText)
         
         print("Message Sent")
     elif inp == "2":
@@ -223,7 +224,15 @@ if __name__ == "__main__":
 # Hope you enjoy learning & experiencing this rollercoaster ride. Happy Coding. Best of Luck to all the participants.
 
 #         """
-        sendSlackMessage(message)
+        #sendSlackMessage(message)
+
+        msginp = input("\nWhich slack channel you want to send?\n1. code-challenge\n2. general\n\n")
+        headerText = "Important Announcement"
+        if msginp == "1":
+            sendSlackMessage(message,config.slackInfoCC,headerText)
+        elif msginp == "2":
+            sendSlackMessage(message,config.slackInfoGen,headerText)
+
         print("Message Sent")
     elif inp == "3":
         print("Exporting Started")
