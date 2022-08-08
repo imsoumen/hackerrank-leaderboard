@@ -150,7 +150,7 @@ if __name__ == "__main__":
     3. EXPORT LEADERBOARD\n
     0. EXIT\n
     Enter your command: """)
-    print("Entered:" + inp)
+    print("Enter ed:" + inp)
     # leaderboard_dict = get_leaderboard_data()
     # process_data(leaderboard_dict)
     if inp == "1":
@@ -161,7 +161,7 @@ if __name__ == "__main__":
         offset=0
         limit=100
 
-        while offset < 300:
+        while offset < 400:
             print("Offset:"+str(offset))
             leaderboard100 = get_leaderboard_data(offset,limit)
             message = createMessage(leaderboard100,message)
@@ -184,19 +184,33 @@ if __name__ == "__main__":
 
         New Problems have just been added to the challenge. Happy Coding :technologist:\n"""
 
-#        message = """Hey Coders,
-        
-#        We have noticed that few participants have being changing their usernames. This will lead to data and progress loss. It's mandatory that participant has to have a single username. Please avoid changing your usernames else your progress will not be captured.
+    #     message = """Hey Coders,
 
-#        Defaulter Users:
-#            shashank_gupta8 -> shashank0106
-#            sushant_saurav1 -> saurav_sushant
-        
- #       Thanks
- #       """
+    # This yearly contest is one of the best learning platform and one of the important and key feature of Wissen Technology. 
+
+    # We know that most of you are not a regular coder and we try to make the whole competition fair for you all so that you guys have a great learning experience through it. That's the reason you might see multiple problems of mixed difficulty level. We want everyone to atleast give a try & apply some logic to solve.
+    
+    # There are two announcements today:
+
+    # 1. Inactive Participants: These are those participants who had signedup but had not submitted a single submissions. 
+    
+    # Below are the list of usernames who are falling as INACTIVE. We will be blocking these users from the challenge. In case, your account falls in this list and you don't want it to be blocked, reach out to us before 21st January 2022.
+
+    # abhinku2, AK_hacks, akshay_prakash1, alfiya_khan, amit_thakur1, animesh_bhagwat, ankit13555, anoop_kashyap, anupama_alevoor, arjun_m2, ashish_khaparde, ashley_rodrigues, avinash_gurav, avinash_pandey1, chirag_hariya, dhanesh_ravi, gopalakrishna_k5, goutham_bongale, haripriya_venka2, hemant_singh8, himanshi_singh, ishan_patel1, ishanincubus, jainvinit7777, kalakambam_mahe1, Kapuluri_Rao, kapulurimaruthi1, kirti_shahi, kunal_motiani, malovika_mazumd1, manish_soni3, manojkumar_kuma3, mb_bitmesra, mitesh_rampariya, munish_grover, naveenprakash_s, nikhil_summi, nikunjbhai_vinc1, nilesh1004, nitish_kumar9, osr_aman_sharma, prachi_pandit1, pradnya_parab, pramodpatilaws, prashantha_n, priya781990, puja_khandelwal, rahul_yadav8, rajeev_kumar5, rajeevk, rajitchatterjee1, ramesh56, ramky_bommisetty, ravi_kumar22, ravindra_nalawa2, ravircit, rawatdeepak_dr34, rohansharma99601, rohit_puari, rohit2lohias, rohitg19388, sachinkumar_rath, saikat_paul1, saloni_madlani1, sanjay61919, sanjevi_naidu, sarita_kumari2, satish_neeli, selvakmar_nalas1, shalini_p3, shalinifarkya, shalu_kumari3, shashankgupta104, shivagwl46, shivani_chauhan9, shubham_jain26, shubham_singh27, siddharth_nambi1, siddharth_shar12, snehal_ghadge, sonali_dwivedi, sunny_tare, swapnil_mehta_1, sweta_soni, tejesh_chaudhary, thanushiya_y, vaddadi_pavanku1, vikas_sharma9, vinay_cikarambo1, Vinay0073, vishal_panchidi, yashok42
+
+
+    # 2. As per our Comparator algorithm, we have come across multiple submissions of few participants which violates the plagiarism clause. We have sent the report to the administrator. They will evaluate this report with the findings and reach out each one of you personally.
+
+    # We hope you are enjoying solving the problems and we wish you that your name doesn''t come in our next Comparator Report.
+
+    # Happy Solving. Happy Coding.
+
+    # Regards,
+    # Wissen Coding Challenge Committee
+    #     """
 
         msginp = input("\nWhich slack channel you want to send?\n1. code-challenge\n2. general\n\n")
-        headerText = "Important Announcement"
+        headerText = "Wissen Coding Challenge Season 3"
         #headerText = "Comparator Bot Report"
         if msginp == "1":
             sendSlackMessage(message,config.slackInfoCC,headerText)
