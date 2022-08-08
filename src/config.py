@@ -1,10 +1,10 @@
 slackInfoCC = {
-    "url": "https://hooks.slack.com/services/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",
+    "url": "https://hooks.slack.com/services/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",
     "username": "leaderboard-bot",
 }
 
 slackInfoGen = {
-    "url": "https://hooks.slack.com/services/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",
+    "url": "https://hooks.slack.com/services/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",
     "username": "leaderboard-bot",
 }
 
