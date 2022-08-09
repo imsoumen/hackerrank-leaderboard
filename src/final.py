@@ -5,6 +5,7 @@ import sys
 import csv
 import requests
 import pandas as pd
+sys.path.insert(0, r'C:\Users\User\Documents\GitHub\Automation_Hackerrank_LeaderBoard')
 import config
 from datetime import date
 
